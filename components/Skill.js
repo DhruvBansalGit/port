@@ -96,7 +96,7 @@ export const Skill2 = () => {
           </div>
           <div className="col-lg-7">
             <div className="skill-wrap-two">
-              <div className="row gap-40">
+              {/* <div className="row gap-40">
                 {items?.map(
                   (item) =>
                     item.id <= 6 && (
@@ -111,7 +111,7 @@ export const Skill2 = () => {
                       </div>
                     )
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
