@@ -1,3 +1,4 @@
+"use server";
 import About from "@/components/About";
 import Blog from "@/components/Blog";
 import Clients from "@/components/Clients";
@@ -10,27 +11,33 @@ import Services from "@/components/Services";
 import Skill from "@/components/Skill";
 import Testimonial from "@/components/Testimonial";
 import NoxfolioLayout from "@/layout/NoxfolioLayout";
+import axios from "axios";
 
-export default function HomeOnePage() {
+export default async function Home() {
+  const response = await axios.get(
+    "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae"
+  );
+  const data = response.data.user;
+  // console.log(response.data.user.services);
   return (
-    <NoxfolioLayout onePageMenu={true}>
+    <NoxfolioLayout>
       {/* Hero Section Start */}
-      <Hero />
+      <Hero user={data} />
       {/* Hero Section End */}
       {/* About Area start */}
-      <About />
+      <About user={data} />
       {/* About Area end */}
       {/* Resume Area start */}
-      <Resume />
+      <Resume timeline={data.timeline} />
       {/* Resume Area end */}
       {/* Services Area start */}
-      <Services />
+      <Services services={data.services} />
       {/* Services Area end */}
       {/* Skill Area start */}
-      <Skill />
+      <Skill items={data.skills} />
       {/* Skill Area end */}
       {/* Projects Area start */}
-      <Projects />
+      <Projects projects={data.projects} />
       {/* Projects Area end */}
       {/* Testimonial Area start */}
       <Testimonial />
