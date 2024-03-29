@@ -14,7 +14,7 @@ const About = ({ user }) => {
                     Professional <span>Problem Solutions</span> For Digital
                     Products
                   </h2>
-                  <p>{user.about.description}</p>
+                  <p>{user?.about?.description}</p>
                 </div>
                 <ul className="list-style-one two-column wow fadeInUp delay-0-2s">
                   <li>Branding &amp; Design</li>
@@ -28,7 +28,7 @@ const About = ({ user }) => {
                     <div className="content">
                       <span>Email Us</span>
                       <br />
-                      <a href="mailto:support@gmail.com">{user.email}</a>
+                      <a href="mailto:support@gmail.com">{user?.email}</a>
                     </div>
                   </div>
                   <div className="info-box-item">
@@ -37,7 +37,7 @@ const About = ({ user }) => {
                       <span>Make A Call</span>
                       <br />
                       <a href="callto:+000(123)45688">
-                        {user.about.phoneNumber}
+                        {user?.about.phoneNumber}
                       </a>
                     </div>
                   </div>
@@ -46,7 +46,7 @@ const About = ({ user }) => {
             </div>
             <div className="col-lg-5">
               <div className="about-image-part wow fadeInUp delay-0-3s">
-                <img src={user.about.avatar.url} alt="About Me" />
+                <img src={user?.about.avatar.url} alt="About Me" />
                 <div className="about-btn btn-one wow fadeInRight delay-0-4s">
                   <img src="assets/images/about/btn-image1.png" alt="Image" />
                   <h6>Experience Designer</h6>
@@ -54,7 +54,7 @@ const About = ({ user }) => {
                 </div>
                 <div className="about-btn btn-two wow fadeInRight delay-0-5s">
                   <img src="assets/images/about/btn-image2.png" alt="Image" />
-                  <h6>{user.about.name}</h6>
+                  <h6>{user?.about.name}</h6>
                   <i className="fas fa-arrow-right" />
                 </div>
                 <div className="dot-shape">

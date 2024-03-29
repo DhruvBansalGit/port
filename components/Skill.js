@@ -29,7 +29,7 @@ const Skill = ({ items }) => {
             <div className="col-lg-7">
               <div className="skill-items-wrap">
                 <div className="row">
-                  {items.map(
+                  {items?.map(
                     (item) =>
                       item.enabled && (
                         <>
@@ -97,7 +97,7 @@ export const Skill2 = () => {
           <div className="col-lg-7">
             <div className="skill-wrap-two">
               <div className="row gap-40">
-                {items.map(
+                {items?.map(
                   (item) =>
                     item.id <= 6 && (
                       <div className="col-md-4 col-sm-4 col-6" key={item.id}>
