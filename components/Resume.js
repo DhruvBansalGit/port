@@ -23,8 +23,8 @@ const Resume = ({ timeline }) => {
             </div>
             <div className="resume-items-wrap">
               <div className="row justify-content-between">
-                {timeline.map((time) => (
-                  <div className="col-xl-5 col-md-6">
+                {timeline.map((time,index) => (
+                  <div className="col-xl-5 col-md-6" key={index}>
                     <div className="resume-item wow fadeInUp delay-0-3s">
                       <div className="icon">
                         <i className="far fa-arrow-right" />

@@ -17,26 +17,27 @@ export default async function Home() {
   const response = await axios.get(
     "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae"
   );
+  const data = response.data.user;
   // console.log(response.data.user.services);
   return (
     <NoxfolioLayout>
       {/* Hero Section Start */}
-      <Hero user={response.data.user} />
+      <Hero user={data} />
       {/* Hero Section End */}
       {/* About Area start */}
-      <About user={response.data.user} />
+      <About user={data} />
       {/* About Area end */}
       {/* Resume Area start */}
-      <Resume timeline={response.data.user.timeline} />
+      <Resume timeline={data.timeline} />
       {/* Resume Area end */}
       {/* Services Area start */}
-      <Services services={response.data.user.services}/>
+      <Services services={data.services}/>
       {/* Services Area end */}
       {/* Skill Area start */}
-      <Skill items={response.data.user.skills}/>
+      <Skill items={data.skills}/>
       {/* Skill Area end */}
       {/* Projects Area start */}
-      <Projects projects={response.data.user.projects} />
+      <Projects projects={data.projects} />
       {/* Projects Area end */}
       {/* Testimonial Area start */}
       <Testimonial />

@@ -18,7 +18,7 @@ const Projects = ({ projects }) => {
           </div>
         </div>
         {projects.map((project, index) => (
-          <div className="row align-items-center pb-25">
+          <div className="row align-items-center pb-25" key={index}>
             <div
               className={index % 2 == 0 ? "col-lg-6" : "col-lg-6 order-lg-2"}
             >
